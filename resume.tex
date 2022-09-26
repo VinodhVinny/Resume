@@ -1,126 +1,107 @@
-\documentclass[11pt]{article}
+\documentclass[11pt,a5paper]{article}
 
-\usepackage{titlesec}
-\usepackage{titling}
-\usepackage[a4paper,margin=.5in]{geometry}
-\usepackage{fontspec}
-\usepackage{multicol}
 \usepackage{enumitem}
-\usepackage{xcolor}
-
-\titleformat{\section}[frame]
-{\Large}{}{0.25em}{\bfseries}
-
-\titleformat{\subsection}[runin]
-{}{}{0.25em}{\bfseries}[:]
-
-%\titlespacing*{\section}{0pt}{1ex}{2ex}
-
-\renewcommand{\maketitle}{
-  \begin{multicols}{2}
-  {\huge \bfseries
-  \theauthor}
-
-  Chittoor, Andhra Pradesh
-\columnbreak{}
-
-\hspace*{\fill}Ph.no: 6300035805
-
-\hspace*{\fill}vinodhvinny27@gmail.com
-  \end{multicols}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\geometry{
+	a4paper,
+	left=1cm,
+	right=1cm,
+	top=1cm,
+	bottom=1cm
 }
 
-\setmainfont{Liberation Sans}
-\thispagestyle{empty}
+\titleformat{\section}
+{\Large\vspace*{-0.25em}}{}{0em}{\bfseries}[\titlerule]
+
+\titleformat{\subsection}
+{\large\vspace*{-0.25em}}{}{0.25em}{\bfseries}
+
+\renewcommand{\maketitle}[5]{
+	\begin{center}
+	\huge{\bfseries{#1}} \\
+	\vspace*{0.25em}
+	\large{#2} \\
+	\vspace*{0.25em}
+	\textbf{Mobile:} {#3} \hspace*{0.5em}
+	\textbf{Email:} {#4} \hspace*{0.5em}
+	\url{#5}
+	\end{center}
+}
 
 \begin{document}
-\title{Resume}
-\author{B Vinodh}
 \maketitle
+{Vinodh B}
+{Computer Science Graduate | C++ \& Java Programmer | Linux Entusiast}
+{6300035805}
+{vinodhvinny27@gmail.com}
+{www.linkedin.com/in/vinodh27}
 
-A Computer Science graduate with proficient skills in C++, Java, Linux and with
-good knowledge in concepts such as Object-oriented programming(oop), Data structures
-and Algorithms. Seeking for a good opportunity to be a part of a reputed Organization
-to implement and improve my technical skills and grow my Career in the field of
-Information Technology.
+\thispagestyle{empty}
 
 \section{Education}
-\begin{itemize}[leftmargin=1mm]
-\begin{multicols}{2}
-\item[] {\bfseries\large Bharath University}
-
-	B.Tech {-} Computer Science Engineering {-} 8.2(CGPA)
-
-  Chennai, Tamilnadu
-
-\columnbreak{}
-\hspace*{\fill} \bfseries{2017 {-} 2021}
-\end{multicols}
-
-\begin{multicols}{2}
-\item[] {\bfseries\large Sri Chaitanya Junior College}
-
-  Intermediate {-} 97.7\%
-
-  Chittoor, Andhra Pradesh
-
-\columnbreak{}
-\hspace*{\fill} \bfseries{2016 {-} 2017}
-\end{multicols}
-
-\begin{multicols}{2}
-\item[] {\bfseries\large Vidhya Vihar School}
-
-  SSC {-} 8.7(GPA)
-
-  Chittoor, Andhra Pradesh
-
-\columnbreak{}
-\hspace*{\fill}  \bfseries{2014 {-} 2015}
-\end{multicols}
-
-\end{itemize}
-
-\section{Technical Skills}
-
-\subsection{Programming/Scripting Languages}
-C/C++, Java, Python, Bash(Scripting)
-
-\subsection{Operating Systems}
-Linux and all Unix Systems
-
-\subsection{Core}
-Data Structures and Algorithms
-
-\subsection{Database}
-Basic understanding of MySQL
-
-\subsection{Tools}
-Git, Vim, Networking, Linux Command Line
-
-\section{Projects}
-
-\begin{itemize}[leftmargin=1mm]
-\item[] {\bfseries Client-Server communication using Sockets}
-
-A simple CLI based client server model application, used to send and receive data from
-server to client and vice versa, using socket programming, written in c++.
-
-\item[] {\bfseries Wifi-Scan}
-
-A wrapper script for wpa\_supplicant which prompts for available networks and initiate the
-connection to the network selected, written in bash.
-
+\begin{itemize}[leftmargin=3mm]
+	\setlength\itemsep{0em}
+\item {
+	\textbf{Bharath Institute of Higher Education and Research | (2017 {-} 2021)} \\
+	B.Tech {-} Computer Science Engineering {-} 8.4(CGPA)
+}
+\item {
+	\textbf{Sri Chaitanya Junior College | (2016 {-} 2017)} \\
+	Intermediate(MPC) {-} 97.7\%
+}
 \end{itemize}
 
 \section{Experience}
+\subsection{Comcast Corporation}
+\hspace*{0.25em}\textit{Development Engineer 1 -- (Dec 2021 - Present)}
+\begin{itemize}[leftmargin=6mm]
+	\setlength\itemsep{0em}
+	\item{Working on Yocto Project for creating custom Linux distributions for RDK devices.}
+	\item{Implemented SBOM(Software Bill of Materials) functionality into the build system which helps maintaining supply chain security by tracking all the software components that make the final software product.}
+	\item{Enabled ASLR for several RDKB devices which produces position indipendent code whic reduces memory related security vulnerabilities.}
+	\item{Worked on creating XPKI certificates used for TLS communications of internal components.}
+\end{itemize}
 
+\section{Projects}
+\subsection{Bencode Parser}
+\begin{itemize}[leftmargin=6mm]
+	\setlength\itemsep{0em}
+	\item{Bencode Parser allows converting Bencoded data(Used in torrent files) into human readable JSON format.}
+	\item{Developed in C++ and used \textbf{Jsoncpp} library for handling with JSON objects.}
+	\item{Created an API which can be used in other projects while working with Bencoded data.}
+\end{itemize}
+\vspace*{-0.5em}
+\url{https://github.com/VinodhVinny/Bencode-Parser}
+
+\subsection{Autentication App}
+\begin{itemize}[leftmargin=6mm]
+	\setlength\itemsep{0em}
+	\item{Implemented Authentication and Authorization mechanism using \textbf{Spring Boot} and \textbf{Spring Security}.}
+	\item{Added \textbf{JWT} support for creating tokens and maintaining sessions until token expires.}
+	\item{This application can run seperately as a service and used by other applications as a Login service by leveraging the Rest Endpoints provided.}
+\end{itemize}
+\vspace*{-0.5em}
+\url{https://github.com/VinodVinny/Autentication-App}
+
+\subsection{Wifi-Scan}
+\begin{itemize}[leftmargin=6mm]
+	\setlength\itemsep{0em}
+	\item{A wrapper script for wpa\_supplicant which prompts for available networks and initiiate the connection to the network selected.}
+	\item{It is a shell script wirtten in bash, comes handy in GUI less situations in linux.}
+\end{itemize}
+\vspace*{-0.5em}
+\url{https://github.com/VinodhVinny/dotfiles/blob/master/.scripts/wifi-scan}
+
+\section{Technical Skills}
 \begin{itemize}[leftmargin=3mm]
-
-\item Constantly solving problems on platforms like leetcode, Hackerrank and geeks for geeks.
-
-\item Has two years of experience in working with {\bfseries GNU/Linux} as a primary operating system.
-
+\item{C/C++, Java, Python, Bash(Scripting)}
+\item{Linux and all Unix like Systems}
+\item{Data Structures and Algorithms}
+\item{Spring and Spring Boot, MySQL}
+\item{Git, Vim, Networking, Linux Command Line, Latex}
 \end{itemize}
 
 \end{document}
