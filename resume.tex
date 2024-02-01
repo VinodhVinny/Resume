@@ -1,5 +1,6 @@
 \documentclass[10pt,a5paper]{article}
 
+\usepackage[T1]{fontenc}
 \usepackage{enumitem}
 \usepackage{geometry}
 \usepackage{multicol}
@@ -14,14 +15,14 @@
 }
 
 \titleformat{\section}
-{\Large\vspace*{-0.25em}}{}{0em}{\bfseries}[\titlerule]
+{\Large\vspace*{-0.25em}}{}{0em}{\scshape}[\titlerule]
 
-\titleformat{\subsection}
-{\large\vspace*{-0.25em}}{}{0.25em}{\bfseries}
+\titleformat{\subsection}[runin]
+{\large\vspace*{-0.25em}}{}{0.25em}{\scshape}
 
 \renewcommand{\maketitle}[5]{
 	\begin{center}
-	\huge{\bfseries{#1}} \\
+	\huge{\scshape{#1}} \\
 	\vspace*{0.25em}
 	\large{#2} \\
 	\vspace*{0.25em}
@@ -34,79 +35,88 @@
 \begin{document}
 \maketitle
 {Vinodh B}
-{Computer Science Graduate | C/C++ Programmer | Linux Entusiast}
+{Software Developer | C/C++ Programmer | Linux Entusiast}
 {+1 (913) 326-4029}
-{vinodhb2720@gmail.com}
+{vinodh.b.27@gmail.com}
 {www.linkedin.com/in/vinodh27}
 
 \thispagestyle{empty}
 
+\section{Technical Skills}
+\begin{itemize}[leftmargin=3mm]
+	\item{\textbf{Programming Languages: }C/C++, Python, Shell Scripting, Java, Rust}
+	\item{\textbf{Operating Systems: }Linux and all Unix like Systems}
+	\item{\textbf{Tools \& Technologies: }Yocto Project, RDK, Git, Vim, Networking, GDB, QEMU, Latex }
+\end{itemize}
+
 \section{Experience}
 \subsection{Comcast Corporation}
-\hspace*{0.25em}\textit{\textbf{Development Engineer 1 -- Platform Security Team} -- (Dec 2021 - July 2023)}
+\hspace*{0.25em}\textit{Development Engineer 1 -- Platform Security Team}
+\hfill Dec 2021 - July 2023
 \begin{itemize}[leftmargin=6mm]
 	\setlength\itemsep{0em}
-	\item{Working on Yocto Project for creating custom Linux distributions for RDK devices.}
-	\item{Implemented SBOM(Software Bill of Materials) functionality into the build system which helps maintaining supply chain security by tracking all the software components that make the final software product.}
-	\item{Enabled ASLR for several RDKB devices which produces position indipendent code whic reduces memory related security vulnerabilities.}
-	\item{Worked on creating XPKI certificates used for TLS communications of internal components.}
-	\item{Worked on enabling Tab Completion feature for a custom Walledgarden shell to securely SSH into CPE devices.}
+	\item{Proficient in Yocto Project for custom Linux distribution creation for RDK devices.}
+	\item{Implemented Tab Completion feature for a custom Walledgarden shell, enhancing secure SSH access to CPE devices.}
+	\item{Integrated Software Bill of Materials (SBOM) functionality in the build system, enhancing supply chain security by tracking all software components in the final product.}
+	\item{Enabled Address Space Layout Randomization (ASLR) for multiple RDKB devices, reducing memory-related security vulnerabilities through position-independent code.}
+	\item{Developed XPKI certificates for TLS communications within internal components.}
+\end{itemize}
+
+\subsection{Cognizant}
+\hspace*{0.25em}\textit{Program Analyst Trainee (Internship)}
+\hfill Aug 2021 - Nov 2021
+\begin{itemize}[leftmargin=6mm]
+	\setlength\itemsep{0em}
+	\item{Worked on backend web development using Spring Boot framework in Java.}
+	\item{Developed RESTful API's for a backend web application.}
 \end{itemize}
 
 \section{Education}
 \begin{itemize}[leftmargin=3mm]
 	\setlength\itemsep{0em}
 \item{
-	\textbf{University of Central Missouri | (2023 {-} Present)} \\
+	\textbf{University of Central Missouri}
+	\hfill 2023 {-} Present \\
 	Masters {-} Computer Science
 }
 \item {
-	\textbf{Bharath Institute of Higher Education and Research | (2017 {-} 2021)} \\
-	B.Tech {-} Computer Science Engineering {-} 8.4(CGPA)
-}
-\item {
-	\textbf{Sri Chaitanya Junior College | (2016 {-} 2017)} \\
-	Intermediate(MPC) {-} 97.7\%
+	\textbf{Bharath Institute of Higher Education and Research}
+	\hfill 2017 {-} 2021 \\
+	B.Tech {-} Computer Science Engineering {-} 8.4 / 10.0(CGPA)
 }
 \end{itemize}
 
 \section{Projects}
+\subsection{Vshell}
+\hfill (Source Code: \href{https://github.com/v1n0dh/vshell}{\underline {vshell}})
+\begin{itemize}[leftmargin=6mm]
+	\setlength\itemsep{0em}
+	\item{Developed a custom shell inspired by a coding challenge from \href{https://codingchallenges.fyi/challenges/challenge-shell}{\underline {codingchallenges.fyi}}, resembling bash.}
+	\item{Implemented essential shell features such as command execution, I/O redirection, and pipes.
+}
+	\item{Incorporated tab completion for files, enhancing user convenience and efficiency.}
+	\item{Implemented support for shell variables, providing flexibility and customization.}
+	\item{Integrated a command history feature, allowing users to navigate through previously executed commands using up and down arrow keys.}
+\end{itemize}
+\vspace*{-0.5em}
+
 \subsection{Bencode Parser}
+\hfill (Source Code: \href{https://github.com/v1n0dh/Bencode-Parser}{\underline {Bencode-Parser}})
 \begin{itemize}[leftmargin=6mm]
 	\setlength\itemsep{0em}
 	\item{Bencode Parser allows converting Bencoded data(Used in torrent files) into human readable JSON format.}
-	\item{Developed in C++ and used \textbf{Jsoncpp} library for handling with JSON objects.}
+	\item{Developed in C++ and used Jsoncpp library for handling with JSON objects.}
 	\item{Created an API which can be used in other projects while working with Bencoded data.}
 \end{itemize}
 \vspace*{-0.5em}
-\url{https://github.com/v1n0dh/Bencode-Parser}
-
-\subsection{Authentication App}
-\begin{itemize}[leftmargin=6mm]
-	\setlength\itemsep{0em}
-	\item{Implemented Authentication and Authorization mechanism using \textbf{Spring Boot} and \textbf{Spring Security}.}
-	\item{Added \textbf{JWT} support for creating tokens and maintaining sessions until token expires.}
-	\item{This application can run seperately as a service and used by other applications as a Login service by leveraging the Rest Endpoints provided.}
-\end{itemize}
-\vspace*{-0.5em}
-\url{https://github.com/v1n0dh/Authentication-App}
 
 \subsection{Wifi-Scan}
+\hfill (Source Code: \href{https://github.com/v1n0dh/dotfiles/blob/master/.scripts/wifi-scan}{\underline {wifi-scan}})
 \begin{itemize}[leftmargin=6mm]
 	\setlength\itemsep{0em}
-	\item{A wrapper script for wpa\_supplicant which prompts for available networks and initiiate the connection to the network selected.}
-	\item{It is a shell script wirtten in bash, comes handy in GUI less situations in linux.}
-\end{itemize}
-\vspace*{-0.5em}
-\url{https://github.com/v1n0dh/dotfiles/blob/master/.scripts/wifi-scan}
-
-\section{Technical Skills}
-\begin{itemize}[leftmargin=3mm]
-\item{C/C++, Java, Python, Bash(Scripting), Rust}
-\item{Linux and all Unix like Systems}
-\item{Data Structures and Algorithms}
-\item{Spring and Spring Boot, MySQL}
-\item{Yocto Project, Git, Vim, Networking, Linux Command Line, Latex}
+	\item{Developed a user-friendly wrapper script for wpa\_supplicant, streamlining the initiation of network connections.}
+	\item{Created in Bash, the script prompts users for available networks and facilitates seamless connection initiation.}
+	\item{Designed to be particularly useful in GUI-less Linux environments, enhancing accessibility and usability.}
 \end{itemize}
 
 \end{document}
