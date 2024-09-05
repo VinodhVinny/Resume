@@ -1,58 +1,80 @@
-\documentclass[10pt,a5paper]{article}
+\documentclass[10pt, letterpaper]{article}
 
-\usepackage[T1]{fontenc}
+\usepackage{fontspec}
 \usepackage{enumitem}
 \usepackage{geometry}
-\usepackage{multicol}
 \usepackage{titlesec}
 \usepackage{hyperref}
+\usepackage{emoji}
+\usepackage{fontawesome}
 \geometry{
-	a4paper,
-	left=1cm,
-	right=1cm,
-	top=1cm,
-	bottom=1cm
+	letterpaper,
+	left=0.5cm,
+	right=0.5cm,
+	top=0.5cm,
+	bottom=0.5cm
 }
 
 \titleformat{\section}
-{\Large\vspace*{-0.25em}}{}{0em}{\scshape}[\titlerule]
+{\large\vspace*{-0.25em}}{}{0em}{\textbf}[\titlerule]
 
 \titleformat{\subsection}[runin]
-{\large\vspace*{-0.25em}}{}{0.25em}{\scshape}
+{\large\vspace*{-0.25em}}{}{0.25em}{\textbf}
 
-\renewcommand{\maketitle}[5]{
+\renewcommand{\maketitle}[6]{
 	\begin{center}
-	\huge{\scshape{#1}} \\
+	\Large{\textbf{#1}} \\
 	\vspace*{0.25em}
-	\large{#2} \\
+	\normalsize {#2} \\
 	\vspace*{0.25em}
-	\textbf{Mobile:} {#3} \hspace*{0.5em}
-	\textbf{Email:} {#4} \hspace*{0.5em}
-	\url{#5}
+	\faPhoneSquare \hspace{0.1em} {#3} \hspace*{0.5em}
+	\faEnvelope \hspace{0.1em} \href{mailto:#4}{#4} \hspace*{0.5em}
+	\faLinkedinSquare \hspace{0.1em} \href{https://#5}{#5} \hspace{0.5em}
+	\faGithubSquare \hspace{0.1em} \href{https://#6}{#6}
 	\end{center}
+}
+
+\newcommand{\cmpnysection}[4] {
+	\raggedright{\large\scshape{#1}}
+	\hfill {#2} \\
+	\underline{\textit{#3}}
+	\hfill {#4}
+}
+
+\newcommand{\projsection}[2] {
+	\raggedright{\large\scshape{#1}} \\
+	{\small \textit{Source Code} \hspace{0.1em} \href{#2}{#2}}
+}
+
+\newcommand{\edusection}[4] {
+	\textbf{#1}
+	\hfill {#2} \\
+	{#3}
+	\hfill {#4}
 }
 
 \begin{document}
 \maketitle
-{Vinodh B}
-{Software Developer | C/C++ Programmer | Linux Entusiast}
-{+1 (913) 326-4029}
+{Vinodh Balakrishna}
+{Software Engineer | C/C++ Programmer | Linux Entusiast}
+{+1 9133264029}
 {vinodh.b.27@gmail.com}
 {www.linkedin.com/in/vinodh27}
+{www.github.com/v1n0dh}
 
 \thispagestyle{empty}
 
 \section{Technical Skills}
-\begin{itemize}[leftmargin=3mm]
-	\item{\textbf{Programming Languages: }C/C++, Python, Shell Scripting, Java, Rust}
-	\item{\textbf{Operating Systems: }Linux and all Unix like Systems}
-	\item{\textbf{Tools \& Technologies: }Yocto Project, RDK, Git, Vim, Networking, GDB, QEMU, Latex }
-\end{itemize}
+\textbf{Programming Languages: }C/C++, Python, Shell Scripting, Java, Rust \\
+\textbf{Operating Systems: }Linux and all Unix like Systems \\
+\textbf{Tools \& Technologies: }Yocto Project, RDK, Git, Vim, Networking, GDB, QEMU, Openssl, Latex
 
 \section{Experience}
-\subsection{Comcast Corporation}
-\hspace*{0.25em}\textit{Development Engineer 1 -- Platform Security Team}
-\hfill Dec 2021 - July 2023
+\cmpnysection
+{Comcast}
+{Chennai, India}
+{Development Engineer 1 - Platform Security Team}
+{Dec 2021 - July 2023}
 \begin{itemize}[leftmargin=6mm]
 	\setlength\itemsep{0em}
 	\item{Proficient in Yocto Project for custom Linux distribution creation for RDK devices.}
@@ -62,9 +84,11 @@
 	\item{Developed XPKI certificates for TLS communications within internal components.}
 \end{itemize}
 
-\subsection{Cognizant}
-\hspace*{0.25em}\textit{Program Analyst Trainee (Internship)}
-\hfill Aug 2021 - Nov 2021
+\cmpnysection
+{Cognizant}
+{Bangalore, India}
+{Program Analyst Trainee - Internship}
+{Aug 2021 - Nov 2021}
 \begin{itemize}[leftmargin=6mm]
 	\setlength\itemsep{0em}
 	\item{Worked on backend web development using Spring Boot framework in Java.}
@@ -72,23 +96,22 @@
 \end{itemize}
 
 \section{Education}
-\begin{itemize}[leftmargin=3mm]
-	\setlength\itemsep{0em}
-\item{
-	\textbf{University of Central Missouri}
-	\hfill 2023 {-} Present \\
-	Masters {-} Computer Science
-}
-\item {
-	\textbf{Bharath Institute of Higher Education and Research}
-	\hfill 2017 {-} 2021 \\
-	B.Tech {-} Computer Science Engineering {-} 8.4 / 10.0(CGPA)
-}
-\end{itemize}
+\edusection
+{University of Central Missouri}
+{2023 {-} Present}
+{Masters {-} Computer Science}
+{}
+
+\edusection
+{Bharath Institute of Higher Education and Research}
+{2017 {-} 2021}
+{B.Tech {-} Computer Science Engineering}
+{\textit{Grade:} 8.4 / 10.0(CGPA)}
 
 \section{Projects}
-\subsection{Vshell}
-\hfill (Source Code: \href{https://github.com/v1n0dh/vshell}{\underline {vshell}})
+\projsection
+{Vshell}
+{https://github.com/v1n0dh/vshell}
 \begin{itemize}[leftmargin=6mm]
 	\setlength\itemsep{0em}
 	\item{Developed a custom shell in C++, inspired by a coding challenge from \href{https://codingchallenges.fyi/challenges/challenge-shell}{\underline {codingchallenges.fyi}}, resembling bash.}
@@ -100,8 +123,9 @@
 \end{itemize}
 \vspace*{-0.5em}
 
-\subsection{Bencode Parser}
-\hfill (Source Code: \href{https://github.com/v1n0dh/Bencode-Parser}{\underline {Bencode-Parser}})
+\projsection
+{Bencode Parser}
+{https://github.com/v1n0dh/Bencode-Parser}
 \begin{itemize}[leftmargin=6mm]
 	\setlength\itemsep{0em}
 	\item{Bencode Parser allows converting Bencoded data(Used in torrent files) into human readable JSON format.}
@@ -110,8 +134,9 @@
 \end{itemize}
 \vspace*{-0.5em}
 
-\subsection{Wifi-Scan}
-\hfill (Source Code: \href{https://github.com/v1n0dh/dotfiles/blob/master/.scripts/wifi-scan}{\underline {wifi-scan}})
+\projsection
+{Wifi-Scan}
+{https://github.com/v1n0dh/dotfiles/blob/master/.scripts/wifi-scan}
 \begin{itemize}[leftmargin=6mm]
 	\setlength\itemsep{0em}
 	\item{Developed a user-friendly wrapper script for wpa\_supplicant, streamlining the initiation of network connections.}
