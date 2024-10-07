@@ -4,32 +4,42 @@
 \usepackage{enumitem}
 \usepackage{geometry}
 \usepackage{titlesec}
-\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage[colorlinks=true,
+			linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+\usepackage{xcolor}
 \usepackage{emoji}
 \usepackage{fontawesome}
+\usepackage[subtle]{savetrees}
 \geometry{
 	letterpaper,
-	left=0.5cm,
-	right=0.5cm,
-	top=0.5cm,
-	bottom=0.5cm
+	left=0.60cm,
+	right=0.60cm,
+	top=0.60cm,
+	bottom=0.60cm
 }
 
+\setmainfont{Lato}
 \titleformat{\section}
 {\large\vspace*{-0.25em}}{}{0em}{\textbf}[\titlerule]
+\titlespacing*{\section}{0pt}{0.5em}{0.5em}
 
 \titleformat{\subsection}[runin]
 {\large\vspace*{-0.25em}}{}{0.25em}{\textbf}
+\titlespacing*{\subsection}{0pt}{0.5em}{0.5em}
 
 \renewcommand{\maketitle}[6]{
 	\begin{center}
-	\Large{\textbf{#1}} \\
+	\Large{\bfseries\scshape{#1}} \\
 	\vspace*{0.25em}
-	\normalsize {#2} \\
+	\small {#2} \\
 	\vspace*{0.25em}
 	\faPhoneSquare \hspace{0.1em} {#3} \hspace*{0.5em}
 	\faEnvelope \hspace{0.1em} \href{mailto:#4}{#4} \hspace*{0.5em}
-	\faLinkedinSquare \hspace{0.1em} \href{https://#5}{#5} \hspace{0.5em}
+		\faLinkedinSquare \hspace{0.1em} \href{https://#5}{#5} \hspace{0.5em}
 	\faGithubSquare \hspace{0.1em} \href{https://#6}{#6}
 	\end{center}
 }
@@ -37,68 +47,62 @@
 \newcommand{\cmpnysection}[4] {
 	\raggedright{\large\scshape{#1}}
 	\hfill {#2} \\
-	\underline{\textit{#3}}
+	{\bfseries{#3}}
 	\hfill {#4}
 }
 
 \newcommand{\projsection}[2] {
-	\raggedright{\large\scshape{#1}} \\
-	{\small \textit{Source Code} \hspace{0.1em} \href{#2}{#2}}
+	\raggedright{\normalsize\bfseries{#1}} | {\small \textit{Source Code:} \hspace{0.1em} \href{#2}{#2}}
 }
+\titlespacing*{\projsection}{0pt}{0.5em}{0.5em}
 
 \newcommand{\edusection}[4] {
-	\textbf{#1}
+	\textbf{#1} | {#3} | {#4}
 	\hfill {#2} \\
-	{#3}
-	\hfill {#4}
 }
 
 \begin{document}
 \maketitle
 {Vinodh Balakrishna}
-{Software Engineer | C/C++ Programmer | Linux Entusiast}
-{+1 9133264029}
+{Software Engineer | C/C++ Programmer | GNU/Linux Entusiast}
+{(913) 326 4029}
 {vinodh.b.27@gmail.com}
 {www.linkedin.com/in/vinodh27}
 {www.github.com/v1n0dh}
 
 \thispagestyle{empty}
 
+\noindent
+Passionate Software Engineer with 2 years of experience developing custom Linux firmware for embedded systems. Proficient in C/C++, Python, Rust, and shell scripting, with a strong expertise in GNU/Linux systems. Interested in optimizing system performance and security through low-level programming and innovative problem-solving.
+
 \section{Technical Skills}
-\textbf{Programming Languages: }C/C++, Python, Shell Scripting, Java, Rust \\
-\textbf{Operating Systems: }Linux and all Unix like Systems \\
-\textbf{Tools \& Technologies: }Yocto Project, RDK, Git, Vim, Networking, GDB, QEMU, Openssl, Latex
+\textbf{Programming Languages:} C/C++, Python, Shell Scripting, Java, Rust, Assembly(Basic) \\
+\textbf{Operating Systems:} GNU Linux/Unix Systems, Embedded Linux Firmware \\
+\textbf{Networking:} TCP/IP, UDP, SNMP, Networking Protocols \\
+\textbf{Tools and Technologies:} Yocto Project, RDK, Data Structures, CMake, GDB, QEMU, OpenSSL, Wireshark, Jenkins, Git, Splunk, Vim
 
 \section{Experience}
 \cmpnysection
 {Comcast}
 {Chennai, India}
-{Development Engineer 1 - Platform Security Team}
+{Embedded Software Engineer | Platform Security Team (TPX)}
 {Dec 2021 - July 2023}
+\vspace*{-0.5em}
 \begin{itemize}[leftmargin=6mm]
 	\setlength\itemsep{0em}
-	\item{Proficient in Yocto Project for custom Linux distribution creation for RDK devices.}
-	\item{Implemented Tab Completion feature for a custom Walledgarden shell, enhancing secure SSH access to CPE devices.}
-	\item{Integrated Software Bill of Materials (SBOM) functionality in the build system, enhancing supply chain security by tracking all software components in the final product.}
-	\item{Enabled Address Space Layout Randomization (ASLR) for multiple RDKB devices, reducing memory-related security vulnerabilities through position-independent code.}
-	\item{Developed XPKI certificates for TLS communications within internal components.}
-\end{itemize}
-
-\cmpnysection
-{Cognizant}
-{Bangalore, India}
-{Program Analyst Trainee - Internship}
-{Aug 2021 - Nov 2021}
-\begin{itemize}[leftmargin=6mm]
-	\setlength\itemsep{0em}
-	\item{Worked on backend web development using Spring Boot framework in Java.}
-	\item{Developed RESTful API's for a backend web application.}
+	\item{Utilized the Yocto Project build system to design, develop, and maintain custom Linux firmware based on the RDK software stack for over 1 million CPE devices including set-top boxes, routers and TVs.}
+	\item{Enhanced security in the custom WalledGarden Shell by implementing command logging and blocking unauthorized commands, significantly improving secure SSH access to CPE devices.}
+	\item{Implemented a Tab Completion feature to the WalledGarden Shell using the readline library, employing a multi-threaded approach,improving the efficiency and usability of the shell.}
+	\item{Integrated Software Bill of Materials (SBOM) functionality into the build system by meticulously tracking all software components,enhancing supply chain security and ensured comprehensive transparency in the final product's software inventory.}
+	\item{Enabled firmware security feature Address Space Layout Randomization (ASLR) for multiple RDKB devices by implementing position-independent code, which significantly reduced memory-related security vulnerabilities.}
+	\item{Maintained and renewed XPKI certificates for TLS communications within various internal components, enhancing data protection and ensuring reliable, encrypted interactions between system components.}
+	\item{Securely removed the video analytics module from RDKB devices, optimizing firmware performance, improving system efficiency, and reducing maintenance overhead.}
 \end{itemize}
 
 \section{Education}
 \edusection
 {University of Central Missouri}
-{2023 {-} Present}
+{Aug 2023 {-} Present}
 {Masters {-} Computer Science}
 {}
 
@@ -106,42 +110,48 @@
 {Bharath Institute of Higher Education and Research}
 {2017 {-} 2021}
 {B.Tech {-} Computer Science Engineering}
-{\textit{Grade:} 8.4 / 10.0(CGPA)}
+{\textit{Grade:} 8.4 / 10.0}
 
 \section{Projects}
 \projsection
 {Vshell}
 {https://github.com/v1n0dh/vshell}
+\vspace*{-0.5em}
 \begin{itemize}[leftmargin=6mm]
 	\setlength\itemsep{0em}
-	\item{Developed a custom shell in C++, inspired by a coding challenge from \href{https://codingchallenges.fyi/challenges/challenge-shell}{\underline {codingchallenges.fyi}}, resembling bash.}
-	\item{Implemented essential shell features such as command execution, I/O redirection, and pipes.
-}
-	\item{Incorporated tab completion for files, enhancing user convenience and efficiency.}
-	\item{Implemented support for shell variables, providing flexibility and customization.}
-	\item{Integrated a command history feature, allowing users to navigate through previously executed commands using up and down arrow keys.}
+	\item{Developed a custom shell in C++, inspired by a coding challenge at \href{https://codingchallenges.fyi/challenges/challenge-shell}{\underline {codingchallenges.fyi}}, closely resembling bash.}
+	\item{Incorporated key shell features, including command execution, I/O redirection, and pipes, facilitating efficient user interaction with the system.}
+	\item{Integrated tab completion for files and command history, enhancing user experience and productivity.}
+	\item{Successfully used by developers in testing environments, showcasing effectiveness in managing command-line tasks.}
 \end{itemize}
+
+\projsection
+{System Metrics Display for dwm}
+{https://github.com/v1n0dh/dwmstatus}
 \vspace*{-0.5em}
+\begin{itemize}[leftmargin=6mm]
+	\setlength\itemsep{0em}
+	\item{Created a custom status bar for the dwm window manager using C programming, displaying real-time system metrics such as network speeds, Wi-Fi network, CPU temperature, RAM usage, battery status, and clock.}
+	\item{Gathered system statistics directly from low-level file structures like \textit{/sys/class} for battery and network information, and used X11 library to dynamically update the status bar.}
+	\item{Integrated network speed calculation by monitoring changes in RX/TX bytes and implemented Wi-Fi network detection using shell commands.}
+	\item{Optimized system resource usage by writing efficient C code, providing critical information without relying on external tools or scripts.}
+\end{itemize}
 
 \projsection
 {Bencode Parser}
 {https://github.com/v1n0dh/Bencode-Parser}
-\begin{itemize}[leftmargin=6mm]
-	\setlength\itemsep{0em}
-	\item{Bencode Parser allows converting Bencoded data(Used in torrent files) into human readable JSON format.}
-	\item{Developed in C++ and used Jsoncpp library for handling with JSON objects.}
-	\item{Created an API which can be used in other projects while working with Bencoded data.}
-\end{itemize}
 \vspace*{-0.5em}
-
-\projsection
-{Wifi-Scan}
-{https://github.com/v1n0dh/dotfiles/blob/master/.scripts/wifi-scan}
 \begin{itemize}[leftmargin=6mm]
 	\setlength\itemsep{0em}
-	\item{Developed a user-friendly wrapper script for wpa\_supplicant, streamlining the initiation of network connections.}
-	\item{Created in Bash, the script prompts users for available networks and facilitates seamless connection initiation.}
-	\item{Designed to be particularly useful in GUI-less Linux environments, enhancing accessibility and usability.}
+	\item{Developed a parser that converts Bencoded data (used in torrent files) into a human-readable JSON format.}
+	\item{Built in C++ utilizing the Jsoncpp library for JSON object handling, creating an API making it handy for handling Bencoded data, enhancing compatibility.}
+\end{itemize}
+
+\section{Certifications}
+\begin{itemize}[leftmargin=6mm]
+	\setlength\itemsep{0em}
+	\item{Rust Essential Training by Barron Stone} | \href{https://www.linkedin.com/learning/certificates/5b0eb9a5191ed3a4cb605f7b8b9e5864ed123e5b13b5f8f68bfc99b6ff8cd87d?trk=share_certificate}{\underline {Certificate Link} \faExternalLink}
+	\item{Linux Device Drivers by Kevin Dankwardt} | \href{https://www.linkedin.com/learning/certificates/ef2284b25b44e40cdb305a085b6a77f7a4f0eac3762a844f5530279dd01a9549?trk=share_certificate}{\underline {Certificate Link} \faExternalLink}
 \end{itemize}
 
 \end{document}
