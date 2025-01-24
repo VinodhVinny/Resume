@@ -1,4 +1,4 @@
-\documentclass[10pt, letterpaper]{article}
+\documentclass[9pt, letterpad]{extarticle}
 
 \usepackage{fontspec}
 \usepackage{enumitem}
@@ -39,16 +39,16 @@
 	\vspace*{0.25em}
 	\faPhoneSquare \hspace{0.1em} {#3} \hspace*{0.5em}
 	\faEnvelope \hspace{0.1em} \href{mailto:#4}{#4} \hspace*{0.5em}
-		\faLinkedinSquare \hspace{0.1em} \href{https://#5}{#5} \hspace{0.5em}
+	\faLinkedinSquare \hspace{0.1em} \href{https://#5}{#5} \hspace{0.5em}
 	\faGithubSquare \hspace{0.1em} \href{https://#6}{#6}
 	\end{center}
 }
 
 \newcommand{\cmpnysection}[4] {
-	\raggedright{\large\scshape{#1}}
-	\hfill {#2} \\
-	{\bfseries{#3}}
-	\hfill {#4}
+	\raggedright{\large\bfseries{#1}}
+	\hfill {\small #2} \\
+	{#3}
+	\hfill {\small #4} \\
 }
 
 \newcommand{\projsection}[2] {
@@ -56,15 +56,15 @@
 }
 \titlespacing*{\projsection}{0pt}{0.5em}{0.5em}
 
-\newcommand{\edusection}[4] {
-	\textbf{#1} | {#3} | {#4}
-	\hfill {#2} \\
-}
+\newcommand{\edusection}[5] {
+	\normalsize{\textbf{#1} | {#3} | {#4}
+	\hfill {\small #2} } \\
+	{\small #5} }
 
 \begin{document}
 \maketitle
 {Vinodh Balakrishna}
-{Software Engineer | C/C++ Programmer | GNU/Linux Entusiast}
+{Software Engineer | C/C++ Programmer | GNU/Linux Enthusiast}
 {(913) 326 4029}
 {vinodh.b.27@gmail.com}
 {www.linkedin.com/in/vinodh27}
@@ -73,10 +73,11 @@
 \thispagestyle{empty}
 
 \noindent
-Passionate Software Engineer with 2 years of experience developing custom Linux firmware for embedded systems. Proficient in C/C++, Python, Rust, and shell scripting, with a strong expertise in GNU/Linux systems. Interested in optimizing system performance and security through low-level programming and innovative problem-solving.
+\section{Professional Summary}
+Software Engineer with around 2 years of experience in developing efficient and secure Linux firmware for embedded systems. Skilled in C/C++, Python, Rust, and shell scripting, with deep expertise in GNU/Linux environments. Specializes in system performance optimization, low-level programming, and implementing robust security solutions.
 
 \section{Technical Skills}
-\textbf{Programming Languages:} C/C++, Python, Shell Scripting, Java, Rust, Assembly(Basic) \\
+\textbf{Programming Languages:} C/C++, Python, Shell Scripting, Java, Rust, Assembly (Basic) \\
 \textbf{Operating Systems:} GNU Linux/Unix Systems, Embedded Linux Firmware \\
 \textbf{Networking:} TCP/IP, UDP, SNMP, Networking Protocols \\
 \textbf{Tools and Technologies:} Yocto Project, RDK, Data Structures, CMake, GDB, QEMU, OpenSSL, Wireshark, Jenkins, Git, Splunk, Vim
@@ -85,32 +86,47 @@ Passionate Software Engineer with 2 years of experience developing custom Linux 
 \cmpnysection
 {Comcast}
 {Chennai, India}
-{Embedded Software Engineer | Platform Security Team (TPX)}
+{{\bfseries Embedded Linux Engineer} | Platform Security Team (TPX)}
 {Dec 2021 - July 2023}
 \vspace*{-0.5em}
 \begin{itemize}[leftmargin=6mm]
 	\setlength\itemsep{0em}
-	\item{Utilized the Yocto Project build system to design, develop, and maintain custom Linux firmware based on the RDK software stack for over 1 million CPE devices including set-top boxes, routers and TVs.}
+	\item{Utilized the Yocto Project build system to design, develop, and maintain custom Linux firmware based on the RDK software stack for over 1 million CPE devices, including set-top boxes, routers, and TVs.}
 	\item{Enhanced security in the custom WalledGarden Shell by implementing command logging and blocking unauthorized commands, significantly improving secure SSH access to CPE devices.}
-	\item{Implemented a Tab Completion feature to the WalledGarden Shell using the readline library, employing a multi-threaded approach,improving the efficiency and usability of the shell.}
-	\item{Integrated Software Bill of Materials (SBOM) functionality into the build system by meticulously tracking all software components,enhancing supply chain security and ensured comprehensive transparency in the final product's software inventory.}
+	\item{Implemented a Tab Completion feature in the WalledGarden Shell using the readline library and a multi-threaded approach, enhancing user experience and increasing shell efficiency by 40\%}
+	\item{Integrated Software Bill of Materials (SBOM) functionality into the build system by meticulously tracking all software components, enhancing supply chain security and ensuring 100\% transparency in the final product's software inventory.}
 	\item{Enabled firmware security feature Address Space Layout Randomization (ASLR) for multiple RDKB devices by implementing position-independent code, which significantly reduced memory-related security vulnerabilities.}
 	\item{Maintained and renewed XPKI certificates for TLS communications within various internal components, enhancing data protection and ensuring reliable, encrypted interactions between system components.}
 	\item{Securely removed the video analytics module from RDKB devices, optimizing firmware performance, improving system efficiency, and reducing maintenance overhead.}
 \end{itemize}
+
+\cmpnysection
+{Cognizant}
+{Bangalore, India}
+{\bfseries Programmer Analyst Trainee (Intern)}
+{Aug 2021 - Dec 2021}
+\vspace*{-0.5em}
+\begin{itemize}[leftmargin=6mm]
+	\setlength\itemsep{0em}
+	\item{Led a Proof of Concept to integrate ShellCheck for automated shell script error detection, improving the development and code review process.}
+\end{itemize}
+
 
 \section{Education}
 \edusection
 {University of Central Missouri}
 {Aug 2023 {-} Present}
 {Masters {-} Computer Science}
-{}
+{\textit{Grade:} 3.12 / 4.00 (CGPA)}
+{Coursework: Operating Systems, Algorithms, Computer Networking \& Security, Compiler Design \& Construction, Design of Cryptographic Algorithms, Web Application Security, Cloud Security}
+\vspace*{0.5em}
 
 \edusection
 {Bharath Institute of Higher Education and Research}
 {2017 {-} 2021}
 {B.Tech {-} Computer Science Engineering}
 {\textit{Grade:} 8.4 / 10.0}
+{}
 
 \section{Projects}
 \projsection
@@ -150,8 +166,8 @@ Passionate Software Engineer with 2 years of experience developing custom Linux 
 \section{Certifications}
 \begin{itemize}[leftmargin=6mm]
 	\setlength\itemsep{0em}
-	\item{Rust Essential Training by Barron Stone} | \href{https://www.linkedin.com/learning/certificates/5b0eb9a5191ed3a4cb605f7b8b9e5864ed123e5b13b5f8f68bfc99b6ff8cd87d?trk=share_certificate}{\underline {Certificate Link} \faExternalLink}
-	\item{Linux Device Drivers by Kevin Dankwardt} | \href{https://www.linkedin.com/learning/certificates/ef2284b25b44e40cdb305a085b6a77f7a4f0eac3762a844f5530279dd01a9549?trk=share_certificate}{\underline {Certificate Link} \faExternalLink}
+	\item{Rust Essential Training by Barron Stone, Linkedin Learnings} | \href{https://www.linkedin.com/learning/certificates/5b0eb9a5191ed3a4cb605f7b8b9e5864ed123e5b13b5f8f68bfc99b6ff8cd87d?trk=share_certificate}{\underline {Certificate Link} \faExternalLink}
+	\item{Linux Device Drivers by Kevin Dankwardt, Linkedin Learnings} | \href{https://www.linkedin.com/learning/certificates/ef2284b25b44e40cdb305a085b6a77f7a4f0eac3762a844f5530279dd01a9549?trk=share_certificate}{\underline {Certificate Link} \faExternalLink}
 \end{itemize}
 
 \end{document}
